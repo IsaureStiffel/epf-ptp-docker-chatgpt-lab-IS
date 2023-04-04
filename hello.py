@@ -27,7 +27,8 @@ def generate_code():
     args = request.args
     language = args.get("language")
     content = args.get("content")
-    message = f"Generate {language} code for the following:\n\n{content}\n\nCode:"
+    message = f"Write {language} code for {content}."
+    print(message)
     completion = openai.Completion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": message}]

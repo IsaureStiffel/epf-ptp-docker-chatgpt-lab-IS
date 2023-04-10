@@ -29,7 +29,7 @@ def generate_code():
     content = args.get("content")
     message = f"Write {language} code for {content}."
     print(message)
-    completion = openai.Completion.create(
+    completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": message}]
     )
